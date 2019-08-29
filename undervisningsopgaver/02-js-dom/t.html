@@ -4,85 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        div {
-            height: 100px;
-            background-color: orange;
-            transition: .5s;
-
-        }
-
-
-        section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill,
-                minmax(100px, 1fr));
-            grid-gap: 1em;
-        }
-
-        .marker {
-            background-color: blue;
-            border-radius: 0;
-        }
-    </style>
 </head>
 
 <body>
-    <section>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="stor">
-            <h1>Hej</h1>
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <template>
+        <article>
+            <h1>Person</h1>
+            <h2>Navn Hold</h2>
+            <img class="profil-billede">
+        </article>
+    </template>
 
-    </section>
+    <section id="person-liste"></section>
 
     <script>
-        const diver = document.querySelectorAll("div");
-        console.log(diver)
+        const skabelon = document.querySelector("template").content;
+        const listElm = document.querySelector("#person-liste");
 
-        diver.forEach(div => {
-            div.addEventListener("click", marker);
+        console.log(skabelon)
+
+        //Datatyper vi har arbejdet med = tal, strings(tekst), array(liste), person
+        //Man definerer objektet en person her:
+        const array = [{
+                "navn": "Kamilla",
+                "hold": "b",
+                //Når det er tal det drejser sig om behøves der ikke gåseøjne
+                "højde": 170,
+                hårfarve: "sølv",
+                billede: "https://kvikea.dk/pix1.jpg",
+                thumb: "https://kvikea.dk/pix2.jpg"
+                //der skal ikke komma efter sidste egenskab
+            },
+            {
+                "navn": "Martin",
+                "hold": "a",
+                //Når det er tal det drejser sig om behøves der ikke gåseøjne
+                højde: 180,
+                hårfarve: "blå",
+                billede: "martin.jpg",
+                thumb: "martin1.jpg"
+                //der skal ikke komma efter sidste egenskab
+            },
+            {
+                navn: "Alan",
+                hold: "b",
+                //Når det er tal det drejser sig om behøves der ikke gåseøjne
+                højde: 170,
+                hårfarve: "rød",
+                billede: "https://ale-kea.dk/images/alan1.jpg",
+                thumb: "https://ale-kea.dk/images/alan_thumb.jpg"
+                //der skal ikke komma efter sidste egenskab
+            }
+        ]
+
+        array.forEach(person => {
+            //klone skabelon
+            const klon = skabelon.cloneNode(true);
+            console.log(klon);
+            const h2 = klon.querySelector("h2");
+            h2.textContent = person.navn;
+            h2.textContent += " Hold " + person.hold;
+            const img = klon.querySelector("img");
+            img.src = person.thumb;
+            img.alt = "Billede af " + person.navn;
+            listElm.appendChild(klon);
         })
-
-        function marker() {
-
-            this.classList.toggle("marker");
-        }
     </script>
-</body>
 
-</html>
+</body></html>
