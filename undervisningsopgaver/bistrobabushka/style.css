@@ -1,51 +1,65 @@
 section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 2rem;
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
 
-        article img {
-            width: 100%;
-        }
+article img {
+    width: 100%;
+}
 
-        nav {
-            text-align: center;
-        }
+nav {
+    text-align: center;
 
-        .kategori {
-            border: 1px solid black;
-            margin: 5px;
-            padding: 5px;
-        }
+}
 
-        .valgt {
-            background-color: red;
-        }
+.kategori {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
 
-        #detalje {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: pink;
-            overflow: scroll;
-            display: none;
+.valgt {
+    background-color: red;
+}
+
+#detalje {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    display: none;
 
 
-        }
+}
 
-        #detalje .luk {
-            position: fixed;
-            top: 0;
-            right: 0;
-            font-size: 4rem;
-        }
+#detalje .luk {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 4rem;
+}
 
-        #detalje .person {
-            width: 60vw;
-            min-height: 50vh;
-            margin: 4rem auto;
-            padding: 4rem;
-            background: white;
-        }
+#detalje .kategori {
+    width: 60vw;
+    min-height: 50vh;
+    margin: 4rem auto;
+    padding: 4rem;
+    background-color: gainsboro;
+
+}
+
+
+
+h1 {
+    text-align: center;
+    color: red;
+    font-family: sans-serif;
+    font-size: 3rem;
+}
+
+h2 {
+    text-align: center;
+}
