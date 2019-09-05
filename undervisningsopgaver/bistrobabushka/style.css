@@ -10,6 +10,12 @@ article img {
 
 nav {
     text-align: center;
+}
+
+button {
+    font-size: 1rem;
+    border-radius: 25px;
+    margin: 10px;
 
 }
 
@@ -17,6 +23,8 @@ nav {
     border: 1px solid black;
     margin: 5px;
     padding: 5px;
+    background-color: white;
+
 }
 
 .valgt {
@@ -47,7 +55,7 @@ nav {
     min-height: 50vh;
     margin: 4rem auto;
     padding: 4rem;
-    background-color: gainsboro;
+    background-color: white;
 
 }
 
@@ -62,4 +70,8 @@ h1 {
 
 h2 {
     text-align: center;
+}
+
+body {
+    background-color: orange;
 }

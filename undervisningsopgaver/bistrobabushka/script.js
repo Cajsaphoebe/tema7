@@ -42,6 +42,7 @@ function vis() {
             const p1 = klon.querySelector("p");
             const p2 = klon.querySelector("p + p");
             const p3 = klon.querySelector("p + p + p");
+            const p4 = klon.querySelector("p + p + p + p");
             p1.textContent = " Pris " + kategori.gsx$pris.$t;
             p2.textContent += " Kort " + kategori.gsx$kort.$t;
             p3.textContent += " Oprindelse " + kategori.gsx$oprindelse.$t;
@@ -75,8 +76,10 @@ function visDetalje(kategori) {
 
     document.querySelector("#detalje h2").textContent = kategori.gsx$navn.$t;
     document.querySelector("#detalje img").src = "imgs/large/" + kategori.gsx$billede.$t + ".jpg";
-    document.querySelector("detalje img").alt = `Portræt af ${kategori.gsx$billede.$t}`;
+    document.querySelector("#detalje img").alt = `Portræt af ${kategori.gsx$billede.$t}`;
 
+
+    document.querySelector("#detalje p").textContent = kategori.gsx$lang.$t;
 
 
     //       document.querySelector("#detalje .githubLink").href = https://github.com/${kategori.gsx$github.$t};
